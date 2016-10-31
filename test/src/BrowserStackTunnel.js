@@ -66,7 +66,7 @@ describe('BrowserStackTunnel', function () {
     osMock._platform = 'unknown';
     osMock._arch = 'unknown';
   });
-    
+
   it('should error if stopped before started', function (done) {
     var browserStackTunnel = new bs.BrowserStackTunnel({
       key: KEY,
@@ -82,7 +82,7 @@ describe('BrowserStackTunnel', function () {
       done();
     });
   });
-  
+
   it('should error if no server listening on the specified host and port', function (done) {
     var browserStackTunnel = new bs.BrowserStackTunnel({
       key: KEY,
@@ -122,7 +122,7 @@ describe('BrowserStackTunnel', function () {
       process.emit('mock:child_process:stdout:data', 'monkey-----  **Error: You provided an invalid key ----monkey');
     }, 100);
   });
-  
+
   it('should error if started when already running', function (done) {
     var browserStackTunnel = new bs.BrowserStackTunnel({
       key: KEY,
@@ -148,7 +148,7 @@ describe('BrowserStackTunnel', function () {
       process.emit('mock:child_process:stdout:data', 'monkey-----  Press Ctrl-C to exit ----monkey');
     }, 100);
   });
-  
+
   it('should error if started when another instance is already running', function (done) {
     var browserStackTunnel1 = new bs.BrowserStackTunnel({
       key: KEY,
@@ -723,7 +723,7 @@ describe('BrowserStackTunnel', function () {
       osMock._platform = 'linux';
       osMock._arch = 'x64';
     });
- 
+
     it('should download new binary if binary is not present', function (done) {
       var browserStackTunnel = new bs.BrowserStackTunnel({
         key: 'MONKEY_KEY',
